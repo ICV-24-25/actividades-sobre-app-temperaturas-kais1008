@@ -61,6 +61,11 @@ function avglocalidad() {
         return;
     }
 
+    let suma = 0;
+    datosTemp.forEach(temp => {
+        suma += parseInt(temp.max); // Sumamos las temperaturas máximas
+    });
+
     let media = datosTemp.reduce((sum, temp) => sum + parseInt(temp.max), 0) / datosTemp.length;
     resultado.textContent = `🌡️ Media: ${media.toFixed(2)}°C`;
 }
